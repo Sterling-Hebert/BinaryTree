@@ -43,10 +43,24 @@ class BinarySearchTree {
 
   search(val) {
     // Your code here
-    if(this.root === null) return false
-    let curr = this.root
-
-    if(val < curr.val)
+    // if(this.root === null) return false
+    // if (this.root.val === val) return true
+    // if (this.root.left.val === val) return true
+    // if (this.root.right.val === val) return true
+    // if (this.search(this.root.left,val)) return true
+    // return this.search(this.root.right,val)
+    //
+    let currentNode = this.root;
+    while (currentNode) {
+        if (val === currentNode.val) return true;
+        if (val < currentNode.val){
+           currentNode = currentNode.left;
+        }
+        if (val > currentNode.val){
+         currentNode = currentNode.right;
+        }
+    }
+    return false;
   }
 
   preOrderTraversal(currentNode = this.root) {
