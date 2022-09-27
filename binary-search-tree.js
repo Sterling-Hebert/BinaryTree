@@ -15,11 +15,29 @@ class BinarySearchTree {
 
   insert(val, currentNode = this.root) {
     let newNode = new TreeNode(val);
+    // creating new node if root is null
     if (currentNode === null) {
       this.root = newNode;
-      // } else {
-      //  let newNode =
-      // }
+      return this
+    }
+    // this is creating left node
+    let curr = this.root
+    while(curr){
+      if (val === curr.val) return
+      if (val < curr.val){
+        if(curr.left === null){
+          curr.left = newNode
+          return this
+        }
+        curr = curr.left
+        // this is creating right node
+      } else {
+        if (curr.right === null){
+          curr.right = newNode
+          return this
+        }
+        curr = curr.right
+      }
     }
   }
 
