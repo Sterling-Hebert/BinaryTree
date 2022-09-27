@@ -8,37 +8,38 @@ class TreeNode {
 }
 
 class BinarySearchTree {
-
   constructor() {
     // Your code here
-    this.root = null
+    this.root = null;
   }
 
-  insert(val, currentNode=this.root) {
-    // Your code here
-    currentNode = val
+  insert(val, currentNode = this.root) {
+    let newNode = new TreeNode(val);
+    if (currentNode === null) {
+      this.root = newNode;
+      // } else {
+      //  let newNode =
+      // }
+    }
   }
 
   search(val) {
     // Your code here
   }
 
-
   preOrderTraversal(currentNode = this.root) {
     // Your code here
   }
-
 
   inOrderTraversal(currentNode = this.root) {
     // Your code here
   }
 
-
   postOrderTraversal(currentNode = this.root) {
     // Your code here
   }
 
-    // Breadth First Traversal - Iterative
+  // Breadth First Traversal - Iterative
   breadthFirstTraversal() {
     // your code here
   }
@@ -46,7 +47,7 @@ class BinarySearchTree {
   // Depth First Traversal - Iterative
   depthFirstTraversal() {
     // your code here
-}
+  }
 }
 
 module.exports = { BinarySearchTree, TreeNode };
