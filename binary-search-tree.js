@@ -101,14 +101,14 @@ class BinarySearchTree {
     // your code here
     const stack = [this.root]
     while (stack.length > 0){
-      const curr = stack.pop()
+      const curr = stack.shift()
       console.log(curr.val)
 
-      if (curr.right !== null){
-        stack.push(curr.right)
-      }
       if(curr.left !== null){
         stack.push(curr.left)
+      }
+      if (curr.right !== null){
+        stack.push(curr.right)
       }
     }
   }
@@ -116,9 +116,17 @@ class BinarySearchTree {
   // Depth First Traversal - Iterative
   depthFirstTraversal() {
     // your code here
-    let currentNode = this.root
-    if(currentNode === null)
-    console.log(currentNode.val)
+    const stack = [ this.root ]
+    while(stack.length > 0){
+      const curr = stack.pop()
+      console.log(curr.val)
+      if (curr.left !== null){
+        stack.push(curr.left)
+      }
+      if (curr.right !== null){
+        stack.push(curr.right)
+      }
+    }
   }
 }
 
