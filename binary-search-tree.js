@@ -99,12 +99,26 @@ class BinarySearchTree {
   // Breadth First Traversal - Iterative
   breadthFirstTraversal() {
     // your code here
+    const stack = [this.root]
+    while (stack.length > 0){
+      const curr = stack.pop()
+      console.log(curr.val)
+
+      if (curr.right !== null){
+        stack.push(curr.right)
+      }
+      if(curr.left !== null){
+        stack.push(curr.left)
+      }
+    }
   }
 
   // Depth First Traversal - Iterative
   depthFirstTraversal() {
     // your code here
-    if ()
+    let currentNode = this.root
+    if(currentNode === null)
+    console.log(currentNode.val)
   }
 }
 
